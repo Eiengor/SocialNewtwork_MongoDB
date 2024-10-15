@@ -7,7 +7,7 @@ namespace DTO
     {
         [BsonId]
         [BsonElement("userID"), BsonRepresentation(BsonType.ObjectId)]
-        public int UserID { get; set; }
+        public ObjectId UserID { get; set; }
         
         [BsonElement("firstName"), BsonRepresentation(BsonType.String)]
         public string? FirstName { get; set; }
@@ -24,7 +24,7 @@ namespace DTO
         [BsonElement("password"), BsonRepresentation(BsonType.String)]
         public string? Password { get; set; }
 
-        [BsonElement("interests"), BsonRepresentation(BsonType.String)]
+        [BsonElement("interests")]
         public BsonArray Interests { get; set; } = new BsonArray();
 
         public override string ToString()

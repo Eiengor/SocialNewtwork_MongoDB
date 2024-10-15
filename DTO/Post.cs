@@ -6,10 +6,10 @@ namespace DTO
     {
         [BsonId]
         [BsonElement("postID"), BsonRepresentation(BsonType.ObjectId)]
-        public int PostID { get; set; }
+        public ObjectId PostID { get; set; }
 
-        [BsonElement("userID")]
-        public int UserID { get; set; }
+        [BsonElement("parentUserID")]
+        public ObjectId ParentUserID { get; set; }
 
         [BsonElement("title"), BsonRepresentation(BsonType.String)]
         public string? Title { get; set; }
@@ -18,10 +18,10 @@ namespace DTO
         public string? Text { get; set; }
 
         [BsonElement("likes"), BsonRepresentation(BsonType.Int32)]
-        public BsonArray Likes { get; set; } = new BsonArray();
+        public int Likes { get; set; }
         
         [BsonElement("dislikes"), BsonRepresentation(BsonType.Int32)]
-        public BsonArray Dislikes { get; set; } = new BsonArray();
+        public int Dislikes { get; set; }
         
         [BsonElement("date"), BsonRepresentation(BsonType.DateTime)]
         public DateTime Date { get; set; } = DateTime.UtcNow;
