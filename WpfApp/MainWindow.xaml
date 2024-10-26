@@ -1,0 +1,76 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="900"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+
+    <Border Background="#D8D2C2"
+            CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height ="80"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Column="0"
+                    Grid.Row="1"
+                    Background="#B17457"/>
+
+            <Border Grid.Row="0"
+                    Grid.ColumnSpan="2"                    
+                    Background="#4A4947"/>
+
+            <Label Content="SIGMA" FontSize="36"
+                   FontFamily="Impact"
+                   Margin="10,10,10,10"
+                   HorizontalAlignment="Center" Foreground="#FAF7F0">
+                <Label.Effect>
+                    <DropShadowEffect/>
+                </Label.Effect>
+            </Label>
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="Home"
+                             Height="50"
+                             Foreground="#FAF7F0"
+                             FontSize="20"
+                             Style="{StaticResource MenuButtonTheme}">
+
+                </RadioButton>
+                <RadioButton Content="Search" 
+                             Height="50"
+                             Foreground="#FAF7F0"
+                             FontSize="20"
+                             Style="{StaticResource MenuButtonTheme}">
+                </RadioButton>
+                <RadioButton Content="Profile"
+                             Height="50"
+                             Foreground="#FAF7F0"
+                             FontSize="20"
+                             Style="{StaticResource MenuButtonTheme}">
+                </RadioButton>
+            </StackPanel>
+
+            <TextBox
+                     Height="40"
+                     VerticalAlignment="Center"
+                     Grid.Column="1" Margin="10,0,290,0"
+                     Style="{StaticResource ModernTextBox}"/>
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"/>
+        </Grid>
+    </Border>
+</Window>
