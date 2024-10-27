@@ -1,5 +1,0 @@
-{
-  "ConnectionStrings": {
-    "DbConnection": "mongodb+srv://Oleh:20050904O@dbprojectcluster.dxque.mongodb.net/?retryWrites=true&w=majority&appName=DBprojectCluster"
-  }
-}
