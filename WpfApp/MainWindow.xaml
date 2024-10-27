@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
+        xmlns:viewModel="clr-namespace:WpfApp.MVVM.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="900"
         WindowStyle="None"
@@ -11,6 +12,10 @@
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen">
 
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    
     <Border Background="#D8D2C2"
             CornerRadius="20">
         <Grid>
@@ -45,21 +50,22 @@
                              Height="50"
                              Foreground="#FAF7F0"
                              FontSize="20"
-                             Style="{StaticResource MenuButtonTheme}">
-
-                </RadioButton>
-                <RadioButton Content="Search" 
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command = "{Binding HomeViewCommand}"/>
+                <RadioButton Content="Community" 
                              Height="50"
                              Foreground="#FAF7F0"
                              FontSize="20"
-                             Style="{StaticResource MenuButtonTheme}">
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command = "{Binding CommunityViewCommand}">
                 </RadioButton>
                 <RadioButton Content="Profile"
                              Height="50"
                              Foreground="#FAF7F0"
                              FontSize="20"
-                             Style="{StaticResource MenuButtonTheme}">
-                </RadioButton>
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command = "{Binding ProfileViewCommand}"/>
             </StackPanel>
 
             <TextBox
@@ -70,7 +76,8 @@
 
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
-                            Margin="10"/>
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
         </Grid>
     </Border>
 </Window>

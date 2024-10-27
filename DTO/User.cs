@@ -26,10 +26,5 @@ namespace DTO
 
         [BsonElement("interests")]
         public BsonArray Interests { get; set; } = new BsonArray();
-
-        public override string ToString()
-        {
-            return $"{UserName}:\n\t{FirstName} {LastName}|  {Email}\n\tInterests: {Interests}";
-        }
     }
 }
