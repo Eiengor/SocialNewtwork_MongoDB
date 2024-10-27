@@ -25,10 +25,5 @@ namespace DTO
         
         [BsonElement("date"), BsonRepresentation(BsonType.DateTime)]
         public DateTime Date { get; set; } = DateTime.UtcNow;
-
-        public override string ToString()
-        {
-            return $"{Title}:\n\t{Text}\n\t{Date}";
-        }
     }
 }

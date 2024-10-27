@@ -11,63 +11,95 @@
     <UserControl.DataContext>
         <viewModel:ProfileViewModel/>
     </UserControl.DataContext>
-    
+
     <Border Background="#D8D2C2">
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="206"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height ="260"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Column="0"
+                    Background="#dbc79c"
+                    CornerRadius="10" HorizontalAlignment="Left" Width="195" Height="240" VerticalAlignment="Center"/>
             <Label Content="{Binding UserName}"
-                   HorizontalAlignment="Left"
                    Margin="10,10,0,0"
                    VerticalAlignment="Top"
-                   Height="40" Width="360"
+                   Height="40"
                    FontFamily="Segoe UI Variable Small Semibold"
                    FontSize="20" Foreground="#FF282726" Background="{x:Null}" />
-            <Image HorizontalAlignment="Left"
-                   Height="250"
+            <Image
                    Margin="10,50,0,0"
-                   VerticalAlignment="Top"
-                   Width="250" Source="/MVVM/View/dmnPfkHA_400x400.jpg"/>
-            <Label Content="Information:"
+                   Source="/MVVM/View/dmnPfkHA_400x400.jpg" HorizontalAlignment="Left" Width="180" Height="175" VerticalAlignment="Top"/>
+
+            <Label Grid.Row="0"
+                   Grid.Column="1"
+                Content="Information:"
                 HorizontalAlignment="Left"
-                Margin="375,10,0,0"
+                Margin="10,10,0,0"
                 VerticalAlignment="Top"
                 Height="40" Width="360"
                 FontFamily="Segoe UI Variable Small Semibold"
-                FontSize="20" Foreground="#FF282726" Background="{x:Null}" />
-            <Label Content="{Binding FirstName}"
+                FontSize="16" Foreground="#FF282726" Background="{x:Null}" />
+            <Label Grid.Column="1"
+                   Content="{Binding FirstName}"
                 HorizontalAlignment="Left"
-                Margin="375,55,0,0"
+                Margin="10,41,0,0"
                 VerticalAlignment="Top"
-                Height="40" Width="415"
+                Height="30" Width="220"
                 FontFamily="Segoe UI Variable Small Semibold"
-                FontSize="20" Foreground="#FF282726" Background="{x:Null}" />
-            <Label Content="{Binding LastName}"
+                FontSize="16" Foreground="#FF282726" Background="{x:Null}" />
+            <Label Grid.Column="1"
+                Content="{Binding LastName}"
                 HorizontalAlignment="Left"
-                Margin="375,100,0,0"
+                Margin="10,76,0,0"
                 VerticalAlignment="Top"
-                Height="40" Width="415"
+                Height="29" Width="208"
                 FontFamily="Segoe UI Variable Small Semibold"
-                FontSize="20" Foreground="#FF282726" Background="{x:Null}" />
-            <Label Content="{Binding Email}"
+                FontSize="16" Foreground="#FF282726" Background="{x:Null}" />
+            <Label Grid.Column="1"
+                   Content="{Binding Email}"
                 HorizontalAlignment="Left"
-                Margin="375,145,0,0"
-                VerticalAlignment="Top"
-                Height="40" Width="415"
+                Margin="10,0,0,0"
+                VerticalAlignment="Center"
+                Height="36" Width="415"
                 FontFamily="Segoe UI Variable Small Semibold"
-                FontSize="20" Foreground="#FF282726" Background="{x:Null}" />
-            <Label Content="Interests:"
+                FontSize="16" Foreground="#FF282726" Background="{x:Null}" />
+            <Label Grid.Column="1"
+                   Content="Interests:"
                 HorizontalAlignment="Left"
-                Margin="375,190,0,0"
+                Margin="10,150,0,0"
                 VerticalAlignment="Top"
-                Height="40" Width="415"
+                Height="30" Width="415"
                 FontFamily="Segoe UI Variable Small Semibold"
-                FontSize="20" Foreground="#FF282726" Background="{x:Null}" />
-            <Label Content="{Binding Interests}"
+                FontSize="16" Foreground="#FF282726" Background="{x:Null}" />
+            <Label Grid.Column="1"
+                   Content="{Binding Interests}"
                 HorizontalAlignment="Left"
-                Margin="375,235,0,0"
-                VerticalAlignment="Top"
-                Height="90" Width="415"
+                Margin="10,185,0,0" Width="415"
                 FontFamily="Segoe UI Variable Small Semibold"
-                FontSize="20" Foreground="#FF282726" Background="{x:Null}" />
+                FontSize="16" Foreground="#FF282726" Background="{x:Null}" Height="70" VerticalAlignment="Top" />
+
+            <ScrollBar Grid.Column="1" HorizontalAlignment="Left" Margin="577,0,0,0" VerticalAlignment="Top" Height="450" Grid.RowSpan="2" Width="17"/>
+
+            <Label Grid.Row="1"
+                   Grid.ColumnSpan="1"
+                Content="Posts:"
+                Margin="10,5,196,0"
+                VerticalAlignment="Top"
+                Height="40"
+                FontFamily="Segoe UI Variable Small Semibold"
+                FontSize="20"
+                    Foreground="#FF282726"
+                   Background="{x:Null}" />
+            <DataGrid Grid.Row="1"
+                      d:ItemsSource="{d:SampleData ItemCount=5}"
+                      Grid.ColumnSpan="2"
+                      Margin="0,0,17,0" FontSize="16" Background="#FFD8D2C2" BorderBrush="#FFDBC79C" OpacityMask="#FFD8D2C2"/>
 
 
         </Grid>

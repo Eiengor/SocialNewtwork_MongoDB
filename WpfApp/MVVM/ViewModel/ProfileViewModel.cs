@@ -6,6 +6,7 @@ using MongoDB.Driver;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
+using WpfApp.MVVM.Model;
 
 namespace WpfApp.MVVM.ViewModel
 {
@@ -14,23 +15,14 @@ namespace WpfApp.MVVM.ViewModel
         public UserDAL _userDAL;
         public ObjectId _loggedInUserId;
         public User _user;
-
+        public List<Post> _userPosts;
+        public DBConnect dbConnect = new DBConnect();
         public ProfileViewModel()
-        {
-            IConfiguration config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("config.json")
-                .Build();
-
-            string connectionString = config.GetConnectionString("DbConnection") ?? "";
-
-            IMongoClient client = new MongoClient(connectionString);
-            IMongoDatabase db = client.GetDatabase("SocialNetwork");
-
-            var users = db.GetCollection<User>("users");
-            _userDAL = new UserDAL(users);
+        {           
+            _userDAL = new UserDAL(dbConnect.GetCollectionUsers());
             _loggedInUserId = new ObjectId("670e88f54f32237ee312c59a");
             LoadUserData(_loggedInUserId);
+            _userPosts = new UserPosts().GetPostsOfUser(_loggedInUserId);
         }
 
         public void LoadUserData(ObjectId userId)
@@ -48,6 +40,7 @@ namespace WpfApp.MVVM.ViewModel
         public string LastName => _user?.LastName ?? string.Empty;
         public string Email => _user?.Email ?? string.Empty;
         public string Interests => _user?.Interests != null ? string.Join(", ", _user.Interests) : string.Empty;
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)

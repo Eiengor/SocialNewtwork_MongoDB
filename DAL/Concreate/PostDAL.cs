@@ -35,6 +35,10 @@ namespace DAL.Concreate
         {
             return _posts.Find(Builders<Post>.Filter.Empty).ToList();
         }
+        public List<Post> GetAllByAuthorID(ObjectId authorID)
+        {
+            return _posts.Find(post => post.ParentUserID == authorID).ToList();
+        }
 
         public Post GetByID(ObjectId ID)
         {
