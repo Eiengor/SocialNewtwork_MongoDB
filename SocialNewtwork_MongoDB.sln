@@ -11,6 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork", "SocialNetw
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp", "WpfApp\WpfApp.csproj", "{2BC93326-DE20-4693-AF46-454082AA7A9E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB_Collections", "DB_Collections", "{3E1981F8-9F47-41D0-B52A-DA4BBFC90E7A}"
+	ProjectSection(SolutionItems) = preProject
+		Comments.json = Comments.json
+		Users.json = Users.json
+		Posts.json = Posts.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

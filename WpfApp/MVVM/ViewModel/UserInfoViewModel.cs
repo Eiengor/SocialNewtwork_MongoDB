@@ -1,18 +1,22 @@
 ﻿using DAL.Concreate;
 using DTO;
 using MongoDB.Bson;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
 using WpfApp.MVVM.Model;
 
 namespace WpfApp.MVVM.ViewModel
 {
-    public class ProfileViewModel : INotifyPropertyChanged
+    public class UserInfoViewModel : INotifyPropertyChanged
     {
         public UserDAL _userDAL;
-        public ObjectId _loggedInUserId;
+        public ObjectId _selectedUserId;
         public User _user;
-        //public List<Post> _userPosts;
         private DBConnect dbConnect = new DBConnect();
         private List<Post> _userPosts;
         public List<Post> UserPosts
@@ -24,12 +28,11 @@ namespace WpfApp.MVVM.ViewModel
                 OnPropertyChanged(nameof(UserPosts));
             }
         }
-        public ProfileViewModel()
+        public UserInfoViewModel()
         {
             _userDAL = new UserDAL(dbConnect.GetCollectionUsers());
-            _loggedInUserId = UserSession.LoggedInUserId;
-            LoadUserData(_loggedInUserId);
-            UserPosts = new UserPosts().GetPostsOfUser(_loggedInUserId); // Assign to property
+            LoadUserData(_selectedUserId);
+            UserPosts = new UserPosts().GetPostsOfUser(_selectedUserId);
         }
 
         public void LoadUserData(ObjectId userId)

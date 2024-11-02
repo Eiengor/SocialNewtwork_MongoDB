@@ -15,7 +15,7 @@
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
-    
+
     <Border Background="#D8D2C2"
             CornerRadius="20">
         <Grid>
@@ -35,7 +35,17 @@
 
             <Border Grid.Row="0"
                     Grid.ColumnSpan="2"                    
-                    Background="#4A4947"/>
+                    Background="#4A4947">
+                <Button
+                    Click="GoToUserButton_Click"
+                    Content="Go to this user!"
+                    HorizontalAlignment="Left"
+                    Height="42"
+                    VerticalAlignment="Center"
+                    Width="170"
+                    Background="White"
+                    FontSize="16" Margin="608,0,0,0"/>
+            </Border>
 
             <Label Content="SIGMA" FontSize="36"
                    FontFamily="Impact"
@@ -66,18 +76,33 @@
                              FontSize="20"
                              Style="{StaticResource MenuButtonTheme}"
                              Command = "{Binding ProfileViewCommand}"/>
+                <RadioButton Content="Add post"
+                             Height="50"
+                             Foreground="#FAF7F0"
+                             FontSize="20"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command = "{Binding AddPostViewCommand}"/>
             </StackPanel>
-
-            <TextBox
-                     Height="40"
-                     VerticalAlignment="Center"
-                     Grid.Column="1" Margin="10,0,290,0"
-                     Style="{StaticResource ModernTextBox}"/>
 
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
                             Margin="10"
                             Content="{Binding CurrentView}"/>
+            <Button
+                    Grid.Row="0" Grid.Column="1"
+                x:Name="Close"
+                Click="CloseButton_Click"
+                Content="X"
+                Height="28" Margin="670,0,0,0"
+                VerticalAlignment="Top"
+                Background="Red"
+                FontSize="18" HorizontalAlignment="Left" Width="30"/>
+            <TextBox Grid.Column="1"
+                Height="41"
+                VerticalAlignment="Center"
+                Margin="10,0,316,0"
+                x:Name = "UsernameBox"
+                TextWrapping="Wrap" MaxWidth="380" FontSize="16"/>
         </Grid>
     </Border>
 </Window>

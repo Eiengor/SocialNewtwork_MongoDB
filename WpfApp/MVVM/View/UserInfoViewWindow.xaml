@@ -1,0 +1,151 @@
+﻿<Window x:Class="WpfApp.MVVM.View.UserInfoViewWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:WpfApp.MVVM.ViewModel"
+        xmlns:local="clr-namespace:WpfApp.MVVM.View"
+        mc:Ignorable="d"
+        Title="UserInfoViewWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <viewModel:UserInfoViewWindowModel/>
+    </Window.DataContext>
+    <Border Background="#D8D2C2">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="206"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height ="260"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Column="0"
+            Background="#dbc79c"
+            CornerRadius="10" HorizontalAlignment="Left" Width="195" Height="240" VerticalAlignment="Center"/>
+            <Label Content="{Binding UserName}"
+           Margin="10,10,0,0"
+           VerticalAlignment="Top"
+           Height="40"
+           FontFamily="Segoe UI Variable Small Semibold"
+           FontSize="20" Foreground="#FF282726" Background="{x:Null}" />
+            <Image
+           Margin="10,50,0,0"
+           Source="/MVVM/View/dmnPfkHA_400x400.jpg" HorizontalAlignment="Left" Width="180" Height="175" VerticalAlignment="Top"/>
+
+            <Label Grid.Row="0"
+           Grid.Column="1"
+        Content="Information:"
+        HorizontalAlignment="Left"
+        Margin="10,10,0,0"
+        VerticalAlignment="Top"
+        Height="40" Width="360"
+        FontFamily="Segoe UI Variable Small Semibold"
+        FontSize="16" Foreground="#FF282726" Background="{x:Null}" />
+            <Label Grid.Column="1"
+           Content="{Binding FirstName}"
+        HorizontalAlignment="Left"
+        Margin="10,41,0,0"
+        VerticalAlignment="Top"
+        Height="30" Width="220"
+        FontFamily="Segoe UI Variable Small Semibold"
+        FontSize="16" Foreground="#FF282726" Background="{x:Null}" />
+            <Label Grid.Column="1"
+        Content="{Binding LastName}"
+        HorizontalAlignment="Left"
+        Margin="10,76,0,0"
+        VerticalAlignment="Top"
+        Height="29" Width="208"
+        FontFamily="Segoe UI Variable Small Semibold"
+        FontSize="16" Foreground="#FF282726" Background="{x:Null}" />
+            <Label Grid.Column="1"
+           Content="{Binding Email}"
+        HorizontalAlignment="Left"
+        Margin="10,0,0,0"
+        VerticalAlignment="Center"
+        Height="36" Width="415"
+        FontFamily="Segoe UI Variable Small Semibold"
+        FontSize="16" Foreground="#FF282726" Background="{x:Null}" />
+            <Label Grid.Column="1"
+           Content="Interests:"
+        HorizontalAlignment="Left"
+        Margin="10,150,0,0"
+        VerticalAlignment="Top"
+        Height="30" Width="415"
+        FontFamily="Segoe UI Variable Small Semibold"
+        FontSize="16" Foreground="#FF282726" Background="{x:Null}" />
+            <Label Grid.Column="1"
+           Content="{Binding Interests}"
+        HorizontalAlignment="Left"
+        Margin="10,185,0,0" Width="415"
+        FontFamily="Segoe UI Variable Small Semibold"
+        FontSize="16" Foreground="#FF282726" Background="{x:Null}" Height="70" VerticalAlignment="Top" />
+
+            <Label Grid.Row="1"
+           Grid.ColumnSpan="1"
+        Content="Posts:"
+        Margin="10,5,196,0"
+        VerticalAlignment="Top"
+        Height="40"
+        FontFamily="Segoe UI Variable Small Semibold"
+        FontSize="20"
+            Foreground="#FF282726"
+           Background="{x:Null}" />
+            <DataGrid Grid.Row="1"
+              Grid.ColumnSpan="2"
+              x:Name="_userPosts"
+              ItemsSource="{Binding UserPosts}"
+              CanUserAddRows="False"
+              CanUserResizeRows="True"
+              AutoGenerateColumns="False"
+              Margin="0,45,22,0" FontSize="16"
+              Background="#FFD8D2C2"
+              BorderBrush="#FFDBC79C"
+              OpacityMask="#FFD8D2C2">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Title" Width="120">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Title}" TextWrapping="Wrap" MaxWidth="110"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Text" Width="260">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Text}" TextWrapping="Wrap" MaxWidth="255"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Likes"
+                Binding="{Binding Path=Likes}"/>
+                    <DataGridTextColumn Header="Dislikes"
+                Binding="{Binding Path=Dislikes}"/>
+                    <DataGridTemplateColumn Header="Date" Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Date}" TextWrapping="Wrap" MaxWidth="90"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <RadioButton Content="Subscribe"
+                     Margin="10,5,0,0"
+                     Grid.Row="1"
+                     VerticalAlignment="Top"
+                     Style="{StaticResource MenuButtonTheme}"
+                     FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="91" />
+            <RadioButton Content="Unsubscribe"
+                     HorizontalAlignment="Left"
+                     Margin="10,25,0,0"
+                     Grid.Row="1"
+                     VerticalAlignment="Top"
+                     Height="15" Width="105"
+                     Style="{StaticResource MenuButtonTheme}"
+                     FontSize="14" FontWeight="Bold"/>
+
+        </Grid>
+    </Border>
+</Window>

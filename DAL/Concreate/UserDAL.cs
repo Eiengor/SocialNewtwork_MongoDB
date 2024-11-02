@@ -66,6 +66,11 @@ namespace DAL.Concreate
             return _users.Find<User>(u => u.UserID == ID).FirstOrDefault();
         }
 
+        public User GetByUserName(string userName)
+        {
+            return _users.Find<User>(u => u.UserName == userName).FirstOrDefault();
+        }
+
         public void Update(ObjectId ID, User updatedUser)
         {
             var filter = Builders<User>.Filter.Eq(u => u.UserID, ID);
@@ -78,6 +83,15 @@ namespace DAL.Concreate
                 Set(u => u.Email, updatedUser.Email).
                 Set(u => u.Interests, updatedUser.Interests);
                 _users.UpdateOne(filter, update);
+        }
+        public bool UserExists(string username)
+        {
+            return _users.AsQueryable().Any(user => user.UserName == username);
+        }
+        public bool CorrectPassword(string username, string password)
+        {
+            var user = GetByUserName(username);
+            return user != null && user.Password == password;
         }
     }
 }

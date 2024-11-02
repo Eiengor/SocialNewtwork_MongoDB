@@ -4,12 +4,13 @@
              xmlns:local="clr-namespace:WpfApp"
              xmlns:viewModel ="clr-namespace:WpfApp.MVVM.ViewModel"
              xmlns:view="clr-namespace:WpfApp.MVVM.View"
-             StartupUri="MainWindow.xaml">
+             StartupUri="LoginWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Themes/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="Themes/TextBoxTheme.xaml"/>
+                <ResourceDictionary Source="Themes/PostBoxTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
@@ -23,6 +24,16 @@
             <DataTemplate DataType="{x:Type viewModel:ProfileViewModel}">
                 <view:ProfileView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UserInfoViewModel}">
+                <view:UserInfoView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AddPostViewModel}">
+                <view:AddPostView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:UserInfoViewWindowModel}">
+                <view:UserInfoViewWindow/>
+            </DataTemplate>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

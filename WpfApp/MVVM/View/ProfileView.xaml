@@ -97,9 +97,45 @@
                     Foreground="#FF282726"
                    Background="{x:Null}" />
             <DataGrid Grid.Row="1"
-                      d:ItemsSource="{d:SampleData ItemCount=5}"
                       Grid.ColumnSpan="2"
-                      Margin="0,0,17,0" FontSize="16" Background="#FFD8D2C2" BorderBrush="#FFDBC79C" OpacityMask="#FFD8D2C2"/>
+                      x:Name="_userPosts"
+                      ItemsSource="{Binding UserPosts}"
+                      CanUserAddRows="False"
+                      CanUserResizeRows="True"
+                      AutoGenerateColumns="False"
+                      Margin="0,0,22,0" FontSize="16"
+                      Background="#FFD8D2C2"
+                      BorderBrush="#FFDBC79C"
+                      OpacityMask="#FFD8D2C2">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Title" Width="120">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Title}" TextWrapping="Wrap" MaxWidth="110"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Text" Width="260">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Text}" TextWrapping="Wrap" MaxWidth="255"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Likes"
+                        Binding="{Binding Path=Likes}"/>
+                    <DataGridTextColumn Header="Dislikes"
+                        Binding="{Binding Path=Dislikes}"/>
+                    <DataGridTemplateColumn Header="Date" Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Date}" TextWrapping="Wrap" MaxWidth="90"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
 
 
         </Grid>
