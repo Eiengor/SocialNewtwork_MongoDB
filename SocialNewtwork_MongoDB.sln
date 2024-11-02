@@ -11,12 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork", "SocialNetw
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp", "WpfApp\WpfApp.csproj", "{2BC93326-DE20-4693-AF46-454082AA7A9E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DB_Collections", "DB_Collections", "{3E1981F8-9F47-41D0-B52A-DA4BBFC90E7A}"
-	ProjectSection(SolutionItems) = preProject
-		Comments.json = Comments.json
-		Users.json = Users.json
-		Posts.json = Posts.json
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB_collections", "DB_collections\DB_collections.csproj", "{0DE21B79-77D8-4334-8D0F-2183F34D647A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +35,10 @@ Global
 		{2BC93326-DE20-4693-AF46-454082AA7A9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BC93326-DE20-4693-AF46-454082AA7A9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BC93326-DE20-4693-AF46-454082AA7A9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DE21B79-77D8-4334-8D0F-2183F34D647A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DE21B79-77D8-4334-8D0F-2183F34D647A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DE21B79-77D8-4334-8D0F-2183F34D647A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DE21B79-77D8-4334-8D0F-2183F34D647A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

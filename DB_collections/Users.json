@@ -1,0 +1,147 @@
+[
+  {
+    "_id": {
+      "$oid": "670e88f54f32237ee312c59a"
+    },
+    "firstName": "John",
+    "lastName": "Doe",
+    "userName": "johndoe123",
+    "email": "john.doe@example.com",
+    "password": "password123",
+    "interests": [
+      "Technology",
+      "Gaming",
+      "Hiking"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "670e88f54f32237ee312c59b"
+    },
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "userName": "janesmith456",
+    "email": "jane.smith@example.com",
+    "password": "password456",
+    "interests": [
+      "Photography",
+      "Traveling",
+      "Reading"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "672666ffedff6fa251c46d0c"
+    },
+    "firstName": "�����",
+    "lastName": "ͳ���",
+    "userName": "untermensh",
+    "email": "fridrih.niezshe@example.com",
+    "password": "12345678",
+    "interests": [
+      "Philosophy",
+      "Teology"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "67266769edff6fa251c46d0e"
+    },
+    "firstName": "������",
+    "lastName": "_",
+    "userName": "plato",
+    "email": "plato@example.com",
+    "password": "87654321",
+    "interests": [
+      "Philosophy",
+      "Politics"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "672667d7edff6fa251c46d10"
+    },
+    "firstName": "���������",
+    "lastName": "������",
+    "userName": "aristotel",
+    "email": "aristotel@example.com",
+    "password": "0000",
+    "interests": [
+      "Philosophy",
+      "���������"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "67266859edff6fa251c46d13"
+    },
+    "firstName": "������",
+    "lastName": "����",
+    "userName": "kant",
+    "email": "kant@example.com",
+    "password": "thingforme",
+    "interests": [
+      "Philosophy",
+      "Math"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "67266888edff6fa251c46d15"
+    },
+    "firstName": "Artur",
+    "lastName": "Shopengauer",
+    "userName": "shopenG",
+    "email": "shopenG@example.com",
+    "password": "ilovemydog",
+    "interests": [
+      "Philosophy",
+      "Dogs"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "67266914edff6fa251c46d18"
+    },
+    "firstName": "Herman",
+    "lastName": "Hesse",
+    "userName": "stephenWolf",
+    "email": "stephenwolf@example.com",
+    "password": "germina",
+    "interests": [
+      "Philosophy",
+      "Traveling",
+      "Literature"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "672669b7edff6fa251c46d1b"
+    },
+    "firstName": "Rene",
+    "lastName": "Dekart",
+    "userName": "KingOfMath",
+    "email": "dekart@example.com",
+    "password": "vector",
+    "interests": [
+      "Philosophy",
+      "Math",
+      "Reading"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "672669faedff6fa251c46d1d"
+    },
+    "firstName": "Alber",
+    "lastName": "Kamu",
+    "userName": "alber",
+    "email": "alber@example.com",
+    "password": "password456",
+    "interests": [
+      "Philosophy",
+      "Literature",
+      "France"
+    ]
+  }
+]
