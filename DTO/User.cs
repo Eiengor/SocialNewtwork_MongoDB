@@ -26,5 +26,11 @@ namespace DTO
 
         [BsonElement("interests")]
         public BsonArray Interests { get; set; } = new BsonArray();
+
+        [BsonElement("followerIDs")]
+        public BsonArray FollowerIDs { get; set; } = new BsonArray();
+        
+        [BsonElement("followingIDs")]
+        public BsonArray FollowingIDs { get; set; } = new BsonArray();
     }
 }

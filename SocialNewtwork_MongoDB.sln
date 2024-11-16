@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork", "SocialNetw
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp", "WpfApp\WpfApp.csproj", "{2BC93326-DE20-4693-AF46-454082AA7A9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB_collections", "DB_collections\DB_collections.csproj", "{0DE21B79-77D8-4334-8D0F-2183F34D647A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DB_collections", "DB_collections\DB_collections.csproj", "{0DE21B79-77D8-4334-8D0F-2183F34D647A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL_Neo4j", "DAL_Neo4j\DAL_Neo4j.csproj", "{21FEF7E9-E7F0-41BF-9A81-10D067FD86A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{0DE21B79-77D8-4334-8D0F-2183F34D647A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DE21B79-77D8-4334-8D0F-2183F34D647A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DE21B79-77D8-4334-8D0F-2183F34D647A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21FEF7E9-E7F0-41BF-9A81-10D067FD86A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21FEF7E9-E7F0-41BF-9A81-10D067FD86A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21FEF7E9-E7F0-41BF-9A81-10D067FD86A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21FEF7E9-E7F0-41BF-9A81-10D067FD86A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

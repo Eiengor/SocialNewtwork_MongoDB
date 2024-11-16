@@ -100,8 +100,9 @@
               CanUserResizeRows="True"
               AutoGenerateColumns="False"
               Margin="0,45,22,0" FontSize="16"
+              Style="{StaticResource DataGridTheme}"
+                      RowStyle="{StaticResource DataGridRowTheme}"
               Background="#FFD8D2C2"
-              BorderBrush="#FFDBC79C"
               OpacityMask="#FFD8D2C2">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="Title" Width="120">
@@ -135,6 +136,8 @@
                      Margin="10,5,0,0"
                      Grid.Row="1"
                      VerticalAlignment="Top"
+                     Command="{Binding FollowCommand}"
+                         IsChecked="{Binding IsFollowing}"
                      Style="{StaticResource MenuButtonTheme}"
                      FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Width="91" />
             <RadioButton Content="Unsubscribe"
@@ -142,9 +145,43 @@
                      Margin="10,25,0,0"
                      Grid.Row="1"
                      VerticalAlignment="Top"
+                         Command="{Binding UnfollowCommand}"
                      Height="15" Width="105"
                      Style="{StaticResource MenuButtonTheme}"
                      FontSize="14" FontWeight="Bold"/>
+            <Label Grid.Column="1"
+                Content="Relation:"
+                HorizontalAlignment="Left"
+                Margin="10,5,0,0"
+                VerticalAlignment="Top"
+                Height="30" Width="104"
+                FontFamily="Segoe UI Variable Small Semibold"
+                FontSize="16" Foreground="#FF282726" Background="{x:Null}" Grid.Row="1" />
+            <Label Grid.Column="1"
+                Content="{Binding Relation}"
+                HorizontalAlignment="Left"
+                Margin="120,5,0,0"
+                VerticalAlignment="Top"
+                Height="30" Width="452"
+                FontFamily="Segoe UI Variable Small Semibold"
+                FontSize="16" Foreground="#FF282726" Background="{x:Null}" Grid.Row="1" />
+            <Label Grid.Row="0"
+                Grid.Column="1"
+                Content="Number of followers:"
+                HorizontalAlignment="Left"
+                Margin="375,10,0,0"
+                VerticalAlignment="Top"
+                Height="40" Width="209"
+                FontFamily="Segoe UI Variable Small Semibold"
+                FontSize="16" Foreground="#FF282726" Background="{x:Null}" />
+            <Label Grid.Column="1"
+                Content="{Binding NumberOfFollowers}"
+                HorizontalAlignment="Left"
+                Margin="375,41,0,0"
+                VerticalAlignment="Top"
+                Height="30" Width="209"
+                FontFamily="Segoe UI Variable Small Semibold"
+                FontSize="16" Foreground="#FF282726" Background="{x:Null}" />
 
         </Grid>
     </Border>

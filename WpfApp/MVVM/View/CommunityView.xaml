@@ -36,18 +36,11 @@
                   CanUserAddRows="False"
                   CanUserResizeRows="True"                  
                   AutoGenerateColumns="False"
-                  Margin="10,51,-22,0" FontSize="16"
+                  Margin="10,51,59,0" FontSize="16"
                   Background="#FFD8D2C2"
-                  BorderBrush="#FFDBC79C"
+                  Style="{StaticResource DataGridTheme}"
+                  RowStyle="{StaticResource DataGridRowTheme}"
                   OpacityMask="#FFD8D2C2" Height="184" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
-                <DataGrid.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleX="-0.315"/>
-                        <RotateTransform/>
-                        <TranslateTransform X="-0.594"/>
-                    </TransformGroup>
-                </DataGrid.RenderTransform>
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="User"
                                         Binding="{Binding Path=UserName}"/>

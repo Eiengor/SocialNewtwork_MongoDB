@@ -36,8 +36,9 @@
                       AutoGenerateColumns="False"
                       Margin="0,51,0,0" FontSize="16"
                       Background="#FFD8D2C2"
-                      BorderBrush="#FFDBC79C"
-                      OpacityMask="#FFD8D2C2" HorizontalAlignment="Left" Width="685">
+                      Style="{StaticResource DataGridTheme}"
+                      RowStyle="{StaticResource DataGridRowTheme}"
+                      OpacityMask="#FFD8D2C2" HorizontalAlignment="Left" Width="733">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Author"
                                         Binding="{Binding Path=AuthorName}"/>

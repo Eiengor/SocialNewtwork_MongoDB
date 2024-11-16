@@ -105,7 +105,8 @@
                       AutoGenerateColumns="False"
                       Margin="0,0,22,0" FontSize="16"
                       Background="#FFD8D2C2"
-                      BorderBrush="#FFDBC79C"
+                      Style="{StaticResource DataGridTheme}"
+                      RowStyle="{StaticResource DataGridRowTheme}"
                       OpacityMask="#FFD8D2C2">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="Title" Width="120">

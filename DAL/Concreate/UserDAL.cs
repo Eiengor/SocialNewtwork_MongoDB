@@ -93,5 +93,43 @@ namespace DAL.Concreate
             var user = GetByUserName(username);
             return user != null && user.Password == password;
         }
+
+        public void AddFollower(ObjectId userId, ObjectId followerID)
+        {
+            var filter = Builders<User>.Filter.Eq(u => u.UserID, userId);
+            var update = Builders<User>.Update.AddToSet(u => u.FollowerIDs, followerID);
+            var result = _users.UpdateOne(filter, update);
+
+            if (result.ModifiedCount == 0)
+            {
+                throw new Exception("Failed to add follower. User may not exist.");
+            }
+        }
+
+        public void AddFollowing(ObjectId userId, ObjectId followingID)
+        {
+            var filter = Builders<User>.Filter.Eq(u => u.UserID, userId);
+            var update = Builders<User>.Update.AddToSet(u => u.FollowingIDs, followingID);
+            var result = _users.UpdateOne(filter, update);
+
+            if (result.ModifiedCount == 0)
+            {
+                throw new Exception("Failed to add following. User may not exist.");
+            }
+        }
+
+        public void DeleteFollower(ObjectId userId, ObjectId followerID)
+        {
+            var filter = Builders<User>.Filter.Eq(u => u.UserID, userId);
+            var update = Builders<User>.Update.Pull(u => u.FollowerIDs, followerID);
+            var result = _users.UpdateOne(filter, update);
+        }
+
+        public void DeleteFollowing(ObjectId userId, ObjectId followingID)
+        {
+            var filter = Builders<User>.Filter.Eq(u => u.UserID, userId);
+            var update = Builders<User>.Update.Pull(u => u.FollowingIDs, followingID);
+            var result = _users.UpdateOne(filter, update);
+        }
     }
 }
