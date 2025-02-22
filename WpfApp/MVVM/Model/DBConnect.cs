@@ -22,7 +22,7 @@ namespace WpfApp.MVVM.Model
 
             IMongoClient client = new MongoClient(connectionString);
             db = client.GetDatabase("SocialNetwork");
-            cmd = new Neo4JCommands("bolt://localhost:7687", "neo4j", "12345678");
+            cmd = 
 
         }
 
